@@ -1,0 +1,6 @@
+# IDE
+.idea/
+.DS_Store
+
+# Node.js Dependencies
+node_modules/
