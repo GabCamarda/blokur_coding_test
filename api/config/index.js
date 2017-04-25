@@ -13,6 +13,10 @@ const config = {
             info: '\x1b[42m',
             reset: '\x1b[0m'
         }
+    },
+
+    finderAPI: {
+        url: 'http://localhost:1339'
     }
 
 };

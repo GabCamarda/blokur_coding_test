@@ -1,9 +1,9 @@
 "use strict";
 
-const config = require('./config');
-const Logger = require('./logger');
-const FinderAPI = require('./finder_api');
-const Server = require('./server');
+const config = require('./config/index');
+const Logger = require('./logger/index');
+const FinderAPI = require('./finder_api/index');
+const Server = require('./server/index');
 
 let logger = new Logger(config);
 let finderAPI = new FinderAPI(config);

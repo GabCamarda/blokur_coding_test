@@ -3,7 +3,7 @@
 const mocha = require('mocha');
 const expect = require('expect');
 const http = require('http');
-const config = require('../config');
+const config = require('../config/index');
 
 //starts the app
 const app = require('../index');
