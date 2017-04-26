@@ -2,14 +2,15 @@ package server
 
 import (
 	"fmt"
-	"github.com/GabCamarda/blokur_coding_test/lyricsFinder/scraper"
+	"github.com/GabCamarda/blokur_coding_test/lyricsFinder/songfinder"
 	"net/http"
 	"strconv"
+	"log"
 )
 
 type Server struct {
 	Port    int
-	Scraper scraper.Parser
+	SongFinder songfinder.Parser
 }
 
 func homeHandler(res http.ResponseWriter, req *http.Request) {
@@ -19,8 +20,14 @@ func homeHandler(res http.ResponseWriter, req *http.Request) {
 func (server *Server) findHandler(res http.ResponseWriter, req *http.Request) {
 	lyrics := req.URL.Query().Get("q")
 	fmt.Fprintln(res, lyrics)
-	//fmt.Println(server.Scraper.Scrape(lyrics))
-	server.Scraper.Scrape(lyrics)
+	songs, err := server.SongFinder.GetSongs(lyrics)
+	if err != nil {
+		log.Fatal(err)
+		res.Write([]byte("An error occurred, please try again"))
+		return
+	}
+
+	res.Write(songs)
 }
 
 func (server *Server) Start() {
