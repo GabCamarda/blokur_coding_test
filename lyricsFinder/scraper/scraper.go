@@ -1,11 +1,9 @@
 package scraper
 
 import (
-	"fmt"
 	"golang.org/x/net/html"
 	"log"
 	"net/http"
-	"go/token"
 )
 
 type Parser struct {
@@ -34,25 +32,6 @@ func (parser *Parser) getUrlContent() (res *http.Response, err error) {
 func (parser *Parser) getDivContent() (content string, err error) {
 	res, err := parser.getUrlContent()
 	tokenizer := html.NewTokenizer(res.Body)
-	//
-	//for {
-	//	token := tokenizer.Next()
-	//	if token == html.ErrorToken {
-	//		return
-	//	}
-	//
-	//	if token == html.StartTagToken {
-	//
-	//	}
-	//
-	//}
-	//
-	//node, err := html.Parse(r.Body)
-	//fmt.Print(node.Data)
-	//if node.Type == html.ElementNode {
-	//	fmt.Println(node)
-	//}
-
 
 	depth := 0
 	for {
@@ -87,6 +66,6 @@ func (parser *Parser) getDivContent() (content string, err error) {
 }
 
 func (parser *Parser) parseElementClass(token *html.Tokenizer) {
-	//tagAttribue, tagAttributeValue, tagMoreAttributes := token.TagAttr()
-	//parse div class to get all the songs
+	tagAttribue, tagAttributeValue, tagMoreAttributes := token.TagAttr()
+	//check if tagAttribute is class and corresponds to the specified value
 }
