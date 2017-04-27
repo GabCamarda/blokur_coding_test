@@ -30,6 +30,12 @@ class Server {
      */
     findLyricsRoute(req, res) {
         let lyrics = req.params.lyrics;
+        if(!lyrics) {
+            res.status(400).send('Lyrics must be valid');
+            this.logger.error('Lyrics not valid');
+            return;
+        }
+
         this.finder.getTracks(lyrics)
             .then(tracks => {
                 if(tracks) {
