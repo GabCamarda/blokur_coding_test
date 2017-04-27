@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	SongFinder "github.com/GabCamarda/blokur_coding_test/lyricsFinder/songfinder"
 	Server "github.com/GabCamarda/blokur_coding_test/lyricsFinder/server"
+	SongFinder "github.com/GabCamarda/blokur_coding_test/lyricsFinder/songfinder"
 	"strconv"
 )
 

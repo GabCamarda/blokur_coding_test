@@ -6,7 +6,7 @@ const http = require('http');
 const config = require('../config/index');
 
 //starts the app
-const app = require('../index');
+const app = require('../app');
 
 describe('Smoke test', () => {
 

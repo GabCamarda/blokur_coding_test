@@ -3,13 +3,13 @@ package server
 import (
 	"fmt"
 	"github.com/GabCamarda/blokur_coding_test/lyricsFinder/songfinder"
+	"log"
 	"net/http"
 	"strconv"
-	"log"
 )
 
 type Server struct {
-	Port    int
+	Port       int
 	SongFinder songfinder.Parser
 }
 

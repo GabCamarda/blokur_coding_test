@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "test": "mocha test/**/*.js"
   },
   "author": "Gab Camarda <gabrycamarda@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "expect": "^1.20.2",
-    "mocha": "^3.3.0"
+    "expect": "1.20.2",
+    "mocha": "3.3.0"
   },
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "4.15.2"
   }
 }
