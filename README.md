@@ -1,2 +1,2 @@
-# blokur_coding_test
-Coding test - Microservice with RESTful APIs in Node.js and service in GoLang
+# Song Finder
+Coding test - Microservice with RESTful APIs in Node.js, service in GoLang and React on the front end as a separate microservice
