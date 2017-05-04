@@ -30,6 +30,7 @@ class Server {
      */
     findLyricsRoute(req, res) {
         let lyrics = req.params.lyrics;
+        res.setHeader('Access-Control-Allow-Origin', '*');
         if(!lyrics) {
             res.status(400).send('Lyrics must be valid');
             this.logger.error('Lyrics not valid');

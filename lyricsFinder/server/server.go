@@ -2,7 +2,7 @@ package server
 
 import (
 	"fmt"
-	"github.com/GabCamarda/blokur_coding_test/lyricsFinder/songfinder"
+	"../finder"
 	"log"
 	"net/http"
 	"strconv"
@@ -10,7 +10,7 @@ import (
 
 type Server struct {
 	Port       int
-	SongFinder songfinder.Parser
+	SongFinder finder.Parser
 }
 
 func homeHandler(res http.ResponseWriter, req *http.Request) {
@@ -19,7 +19,6 @@ func homeHandler(res http.ResponseWriter, req *http.Request) {
 
 func (server *Server) findHandler(res http.ResponseWriter, req *http.Request) {
 	lyrics := req.URL.Query().Get("q")
-	fmt.Fprintln(res, lyrics)
 	songs, err := server.SongFinder.GetSongs(lyrics)
 	if err != nil {
 		log.Fatal(err)

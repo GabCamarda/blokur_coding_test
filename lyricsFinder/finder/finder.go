@@ -1,4 +1,4 @@
-package songfinder
+package finder
 
 import (
 	"encoding/json"
@@ -46,6 +46,7 @@ func (parser *Parser) GetSongs(lyrics string) ([]byte, error) {
 		contents.Songs[k].Title = string(arr[1])
 	}
 
+	//convert to JSON
 	jsonContent, err := json.Marshal(contents)
 	if err != nil {
 		log.Fatalln(err)

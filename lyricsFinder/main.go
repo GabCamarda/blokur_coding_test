@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	Server "github.com/GabCamarda/blokur_coding_test/lyricsFinder/server"
-	SongFinder "github.com/GabCamarda/blokur_coding_test/lyricsFinder/songfinder"
+	"./server"
+	"./finder"
 	"strconv"
 )
 
@@ -14,9 +14,9 @@ var parserDiv = flag.String("parserDiv", "div", "the div element tag to scrape")
 var parserDivValue = flag.String("parserDivValue", "<div class=\"songs clearfix\">", "the div element to scrape")
 
 func main() {
-	finder := SongFinder.Parser{*parserUrl, *parserDiv, *parserDivValue}
-	server := Server.Server{*port, finder}
+	f := finder.Parser{*parserUrl, *parserDiv, *parserDivValue}
+	serv := server.Server{*port, f}
 	fmt.Println("Server listening on port " + strconv.Itoa(*port))
 
-	server.Start()
+	serv.Start()
 }
