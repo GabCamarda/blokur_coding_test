@@ -4,3 +4,6 @@
 
 # Node.js Dependencies
 node_modules/
+
+# LiveReload
+gin-bin

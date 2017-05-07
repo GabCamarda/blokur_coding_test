@@ -3,9 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"./server"
-	"./finder"
 	"strconv"
+	"github.com/GabCamarda/songfinder/lyricsFinder/server"
+	"github.com/GabCamarda/songfinder/lyricsFinder/finder"
 )
 
 var port = flag.Int("port", 1339, "config value to set which port should the server listen to")

@@ -2,10 +2,10 @@ package server
 
 import (
 	"fmt"
-	"../finder"
 	"log"
 	"net/http"
 	"strconv"
+	"github.com/GabCamarda/songfinder/lyricsFinder/finder"
 )
 
 type Server struct {
